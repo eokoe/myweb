@@ -125,7 +125,7 @@ MyWeb - Catalyst based application
 
 =head1 SYNOPSIS
 
-    script/webmyweb_server.pl
+    script/myweb_server.pl
 
 =head1 DESCRIPTION
 
