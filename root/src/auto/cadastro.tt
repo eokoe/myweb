@@ -1,5 +1,6 @@
 [%SET title = l('Cadastre-se')%]
 
+
 	<div class="title-cadastro text-center">
 		<div class="container">
 			<div class="row">
@@ -14,8 +15,18 @@
 			<div class="col-md-6 col-md-offset-3">
 				<div class="box-shadow">
 					<form class="form-horizontal" id="form-cadastro" autocomplete="off" method="post" action="/form/newaccount">
+
+
+<fb:login-button scope="public_profile,email" onlogin="facebook.checkLoginState();">
+</fb:login-button>
+
+<div id="status">
+</div>
+
+
                         [%INCLUDE 'parts/campos_cadastro.tt'%]
                         <input type="hidden" name="fn" value="new"/>
+
 					</form>
 					<div class="row responsive-padding">
 						<div class="menu-form-login col-md-6">

@@ -21,6 +21,7 @@
 [%-CALL assets.include("js/modernizr.js")%]
 
 [%-CALL assets.include("js/site.js")%]
+[%-CALL assets.include("js/facebook.js")%]
 
 [%- assets.export("css") |none-%]
 <!--[if lt IE 9]>
@@ -36,7 +37,6 @@
 [% span_loc('Sim')|none %]
 [% span_loc('Não')|none %]
 </div>
-
 <body class="[% body_class %]">
     <header class="home">
         <div class="header-content">
@@ -99,9 +99,27 @@
 
 <script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">var ga;</script>
-[% assets.export("js")|none %]
-[%INCLUDE 'ga.tt'%]
+<script>
+    window.fbAsyncInit = function() {
+    FB.init({
+        appId      : '[%c.config.facebook_app_id%]',
+        xfbml      : true,
+        version    : 'v2.1'
+    });
+    };
 
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+[% assets.export("js")|none %]
+
+[%INCLUDE 'ga.tt'%]
 </body>
 </html>
 [%END%][%ELSE%][%content|none%][%END%]

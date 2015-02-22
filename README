@@ -1,1 +1,28 @@
 Run script/myweb_server.pl to test the application.
+
+See myweb.conf and edit your changes to myweb_local.conf
+
+This web application need access to an postgres database, WHY? Lexicons!
+
+Just create a postgres database named `lexicon_database` and create that table:
+
+    CREATE TABLE lexicon
+    (
+        id serial NOT NULL,
+        lang character varying(15) DEFAULT NULL::character varying,
+        lex character varying(255) DEFAULT NULL::character varying,
+        lex_key text,
+        lex_value text,
+        created_at timestamp without time zone NOT NULL DEFAULT now(),
+        origin_lang character varying NOT NULL DEFAULT 'pt-br'::character varying,
+        CONSTRAINT lexicon_pkey PRIMARY KEY (id)
+    );
+
+    CREATE UNIQUE INDEX ix_lexicon_words
+    ON lexicon
+    USING btree
+    (lang COLLATE pg_catalog."default", md5(lex_key) COLLATE pg_catalog."default");
+
+
+Everytime you need print some text (and you want lex it), use [%l('Foobar')%] on TT.
+No placeholder is avaiable, so, use [%l('Foobar __ITEM__ fub').replace('__ITEM__', variable)%] to placeholders.
