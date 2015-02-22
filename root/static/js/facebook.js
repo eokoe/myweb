@@ -31,13 +31,7 @@ var facebook = function (){
     }
 
     window.fbAsyncInit = function() {
-        FB.init({
-            appId      : '{your-app-id}',
-            cookie     : true,  // enable cookies to allow the server to access
-                                // the session
-            xfbml      : true,  // parse social plugins on this page
-            version    : 'v2.1' // use version 2.1
-        });
+
 
         // Now that we've initialized the JavaScript SDK, we call
         // FB.getLoginStatus().  This function gets the state of the
@@ -51,9 +45,6 @@ var facebook = function (){
         //
         // These three cases are handled in the callback function.
 
-        FB.getLoginStatus(function(response) {
-            statusChangeCallback(response);
-        });
 
     };
 
@@ -69,7 +60,8 @@ var facebook = function (){
   }
 
   return {
-    checkLoginState: checkLoginState
+    checkLoginState: checkLoginState,
+    statusChangeCallback: statusChangeCallback
   };
 
 }();

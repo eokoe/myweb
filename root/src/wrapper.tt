@@ -99,13 +99,20 @@
 
 <script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">var ga;</script>
+[% assets.export("js")|none %]
 <script>
     window.fbAsyncInit = function() {
-    FB.init({
-        appId      : '[%c.config.facebook_app_id%]',
-        xfbml      : true,
-        version    : 'v2.1'
-    });
+
+        FB.init({
+            appId      : '[%c.config.facebook_app_id%]',
+            xfbml      : true,
+            version    : 'v2.1'
+        });
+
+
+        FB.getLoginStatus(function(response) {
+            facebook.statusChangeCallback(response);
+        });
     };
 
     (function(d, s, id){
@@ -117,7 +124,6 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 
-[% assets.export("js")|none %]
 
 [%INCLUDE 'ga.tt'%]
 </body>
