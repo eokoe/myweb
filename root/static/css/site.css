@@ -1,0 +1,254 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+html *{
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+h1,h2,h3,.title{
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+a, a:visited{
+    color: #EA3939;
+}
+a:hover{
+    color: red;
+}
+
+a.btn { color: white }
+
+header.home{
+    position: relative;
+    background-color: white;
+}
+
+.menu-top{
+    text-align: right;
+    margin-top: 35px;
+}
+.menu-top.collapse{
+    display: none;
+}
+.menu-top ul{
+    margin: 5px;
+}
+.menu-top ul li,
+.menu-footer ul li{
+    display: inline-block;
+    color: #222;
+    padding: 0 4px;
+    text-transform:uppercase;
+}
+.root .menu-footer ul li{
+    text-transform:inherit;
+}
+.menu-footer ul li.header{
+    text-transform:uppercase;
+    color: white;
+}
+.menu-top a,
+.menu-footer a{
+    color: blue;
+    text-decoration: none;
+}
+.menu-top a:hover,
+.menu-footer a:hover{
+    color: red;
+}
+.menu-top ul li i,
+.menu-footer ul li i{
+    margin-right: 5px;
+}
+
+.navbar-toggle{
+    border-color: #000;
+}
+.navbar-toggle .icon-bar {
+    border: 1px solid #000;
+}
+
+.experimente, .title-cadastro{
+    background-color: #BA0E0E;
+
+}
+
+.experimente .container{
+    padding: 30px 0;
+    color: #fff;
+    line-height: 1.8em;
+}
+
+
+.title-cadastro {
+    padding: 20px 0 30px 0;
+    font-size: 2em;
+}
+
+
+.main-container{
+    margin-top: 15px;
+    margin-bottom: 60px;
+}
+
+.bs-footer {
+    background-color: black;
+}
+
+.bs-footer .copyright{
+    padding: 10px;
+    color: #fff;
+}
+
+
+.footer-cols h4{
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 0;
+}
+.footer-cols ul{
+    padding: 0;
+}
+.footer-cols ul li{
+    padding: 5px 2px;
+    display: block;
+}
+
+.footer-cols .contact-info{
+    text-align: left;
+}
+.footer-cols .menu{
+    text-align: left;
+}
+
+.box-shadow{
+    padding: 30px 40px;
+    background-color: #f2f2f2;
+    color: #111;
+}
+
+
+pre.terms{
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet */
+    word-break: normal;
+}
+
+
+
+@media (min-width: 768px) {
+    .menu-top.collapse{
+        display: block;
+    }
+}
+@media (max-width: 1200px) {
+    .slider .call{
+        padding: 60px 0;
+    }
+    .menu-top ul li,
+    .menu-footer ul li{
+        font-size: 0.85em;
+    }
+}
+@media (max-width: 992px) {
+    .experimente .sign-button{
+        font-size: 1.8em;
+    }
+
+
+}
+@media (max-width: 769px) {
+    .menu-top,
+    .menu-footer{
+        margin-top: 10px;
+        text-align: left;
+    }
+    .menu-top ul,
+    .menu-footer ul{
+        margin: 10px;
+        padding-left: 0;
+    }
+    .menu-top ul li,
+    .menu-footer ul li{
+        display: block;
+        padding-left: 0;
+        padding: 10px 0;
+        border-bottom: 1px solid #fff;
+    }
+    .menu-top ul li:last-child,
+    .menu-footer ul li:last-child{
+        border-bottom: none;
+    }
+    .menu-top .split,
+    .menu-footer .split{
+        display: none;
+    }
+
+    .footer-cols .contact-info{
+        text-align: center;
+    }
+}
+@media (min-width: 1199px) {
+    .experimente .row .button{
+        padding: 10px 0;
+    }
+}
+
+/* http://stackoverflow.com/questions/19417040/some-of-bootstrap3-glyphicons-are-not-displayed-correctly-on-phonegap-android-we */
+@charset "UTF-8";
+
+
+.bottom-padding { padding-bottom: 0.3em; }
+.responsive-padding { padding: 1px; }
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .bottom-padding { padding-bottom: 0.5em; }
+    .responsive-padding { padding: 5px; }
+
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .bottom-padding { padding-bottom: 0.7em; }
+    .responsive-padding { padding: 10px; }
+}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .bottom-padding { padding-bottom: 1em;}
+    .responsive-padding { padding: 15px; }
+}
+
+
+
+
+.loc-words {
+    display: none;
+}
+
+

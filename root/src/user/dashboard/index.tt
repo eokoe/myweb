@@ -1,0 +1,4 @@
+[%SET title = l('Dashboard')%]
+[%INCLUDE 'parts/messages.tt'%]
+<h2>[%l('Visão Geral')%]: Dashboard</h2>
+

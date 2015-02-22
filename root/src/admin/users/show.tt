@@ -1,0 +1,30 @@
+[%SET title = ('User')%]
+[%INCLUDE 'parts/messages.tt'%]
+<div class="container">
+
+    <h1>user [%myuser.id%] "[%myuser.name%]" <small>[%myuser.email%]</small></h1>
+
+
+
+
+
+    <h2>Info</h2>
+
+    <table class="table table-striped table-condensed table-hover">
+    <thead>
+    <tr>
+        <th>Key</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    [%FOREACH k IN myuser.keys.sort %]
+    <tr>
+    <th>[%k%]</td><th>[%myuser.$k.defined ? myuser.$k.join(';') : '<NULL>' %]</td>
+    </tr>
+    [%END%]
+    </tbody>
+    </table>
+
+
+</div>

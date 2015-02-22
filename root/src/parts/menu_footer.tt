@@ -1,0 +1,12 @@
+<div class="row">
+	<div class="col-xs-6">
+		<ul>
+			<li class="header">[%l('Usuário')%]</li>
+			<li class="[% IF "/${c_req_path}" == '/cadastro' %]active[%END%] odd"><a href="/cadastro" class="white shadow">[%l('Cadastre-se')%]</a></li>
+			<li class="[% IF "/${c_req_path}" == '/login' %]active[%END%] even"><a href="/login" class="white shadow">Login</a></li>
+			<li class="[% IF "/${c_req_path}" == '/privacidade' %]active[%END%] odd"><a href="/privacidade" class="white shadow">[%l('Política de Privacidade')%]</a></li>
+
+			<li class="[% IF "/${c_req_path}" == '/contato' %]active[%END%] odd"><a href="/contato" class="white shadow">[%l('Contato')%]</a></li>
+		</ul>
+	</div>
+</div>

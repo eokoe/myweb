@@ -1,0 +1,14 @@
+[%SET title = l('Termos e condições')%]
+<div class="title-cadastro">
+    <div class="container">
+        <div class="row text-center">
+            [%l('Termos e condições')%]
+        </div>
+    </div>
+</div>
+<div class="main-container container">
+    <br />
+    <pre class="terms">
+    CONTRATO DE PRESTAÇÃO DE SERVIÇO .......
+    </pre>
+</div>

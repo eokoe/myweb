@@ -1,0 +1,24 @@
+[%SET title = l('Política de Privacidade')%]
+	<div class="title-cadastro">
+		<div class="container">
+			<div class="row text-center">
+				[%l('Política de Privacidade')%]
+			</div>
+		</div>
+	</div>
+	<div class="main-container container">
+		<br />
+		<pre class="terms">
+
+		[%l('TERMO DE PRIVACIDADE')%]
+
+		[%l('A PRESTADORA tem o compromisso com a privacidade e a segurança de seus ASSINANTES durante todo o processo de uso dos serviços. Os dados cadastrais dos ASSINANTES não são vendidos, trocados ou divulgados para terceiros, exceto quando essas informações são necessárias para cobrança, requerimento judicial ou ofício emitido por autoridade competente.')%]
+
+		[%l('Para que seus dados permaneçam intactos, a PRESTADORA desaconselha expressamente a divulgação de sua senha e login a terceiros, mesmo a amigos e parentes.')%]
+
+		[%l('As alterações sobre nossa política de privacidade serão devidamente informadas neste espaço.')%]
+
+		....
+
+		</pre>
+	</div>

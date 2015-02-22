@@ -1,0 +1,27 @@
+[%SET title = l('Users')%]
+[%INCLUDE 'parts/messages.tt'%]
+<h2>Users</h2>
+
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+    <th>id</th>
+    <th>name</th>
+    <th>email</th>
+    <th>mobile num</th>
+    <th>dia/hora</th>
+</tr>
+</thead>
+<tbody>
+[%FOREACH dc IN users %]
+<tr class="[% dc.is_partner ? (dc.partnership_established? 'success':'warning') : '' %]">
+    <td>[%dc.id%]</td>
+    [%href = c.uri_for_action("/$role_controller/users/show", [dc.id])%]
+    <td><a href="[%href%]">[%dc.name%]</a></td>
+    <td>[%dc.email%]</td>
+    <td>[%format_mobile_number(dc.mobile_number)%]</td>
+    <td>[%ymd_to_human(dc.created_at)%]</td>
+    </tr>
+[%END%]
+</tbody>
+</table>

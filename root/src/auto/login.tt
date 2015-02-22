@@ -1,0 +1,42 @@
+[%SET title = l('Acesso do assinante')%]
+    <div class="title-cadastro">
+        <div class="container">
+            <div class="row text-center">
+                [%l('Acesso do assinante')%]
+            </div>
+        </div>
+    </div>
+
+	<div class="main-container container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 box-shadow">
+				[%INCLUDE 'parts/messages.tt'%]
+				<form class="form-horizontal" method="post" action="/form/login">
+					<input type="hidden" name="redirect_to" value="[%c.req.params.redirect_to%]"/>
+
+					[%input_text('email','Endereço da sua conta de e-mail', { app => '@', label_col => 'col-lg-12', input_col => 'col-lg-12', control_label => 'NO' })|none%]
+					[%input_text('password', 'Senha utilizada neste site', { type => 'password', app => '<span class="glyphicon glyphicon-lock"></span>', label_col => 'col-lg-12', input_col => 'col-lg-12', control_label => 'NO' })|none%]
+
+					<div class="form-group ">
+						<div class="col-lg-8 col-lg-offset-2 ">
+							<button type="submit" class="btn col-sm-12 btn-warning" data-loading-text="[%l('Processando...')%]">[%l('Entrar')%]</button>
+							<br />
+						</div>
+					</div>
+				</form>
+				<div class="row responsive-padding">
+					<div class="menu-form-login col-md-6 text-center">
+							<a href="/cadastro">[%l('Ainda não é cadastrado?')%]</a>
+					</div>
+					<div class="menu-form-login col-md-6 text-center">
+							<a href="/esqueceu">[%l('Esqueceu sua senha?')%]</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+
+
+	</div>

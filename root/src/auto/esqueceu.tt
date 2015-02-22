@@ -1,0 +1,36 @@
+[%SET title = l('Recuperar senha')%]
+<div class="title-cadastro">
+    <div class="container">
+        <div class="row text-center">
+            <div class="text">[%l('Esqueceu sua senha?')%]</div>
+        </div>
+    </div>
+</div>
+
+	<div class="main-container container">
+		<div class="row">
+
+			<div class="col-md-6 col-md-offset-3 box-shadow">
+				[%INCLUDE 'parts/messages.tt'%]
+				<form class="form-horizontal" method="post" action="/form/forgot">
+					[%input_text('email','Informe o e-mail cadastrado', { app => '@', label_col => 'col-lg-12', input_col => 'col-lg-12', control_label => 'NO' })|none%]
+
+					<div class="form-group ">
+						<div class="col-lg-8 col-lg-offset-2 ">
+							<button type="submit" class="btn col-sm-12 btn-warning" data-loading-text="[%l('Processando...')%]">[%l('Recuperar senha')%]</button>
+						</div>
+					</div>
+				</form>
+
+				<div class="row responsive-padding">
+					<div class="menu-form-login col-md-6 text-center">
+							<a href="/login">[%l('Lembrou a senha? Faça o login!')%]</a>
+					</div>
+					<div class="menu-form-login col-md-6 text-center">
+							<a href="/cadastro">[%l('Não tem conta? Cadastre-se agora!')%]</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>

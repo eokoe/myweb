@@ -1,0 +1,57 @@
+[%IF !without_wrapper%]
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<link rel="icon"
+      type="image/png"
+      href="/static/img/favico.png" />
+<meta charset="UTF-8">
+<title>[% template.title or site.title or title %]</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+[%-CALL assets.include("css/bootstrap.min.css")%]
+[%-CALL assets.include("css/bootstrap-switch.css")%]
+
+[%-CALL assets.include("css/site.css")%]
+[%-CALL assets.include("css/admin.css")%]
+
+[%-CALL assets.include("js/lexicon.js")%]
+[%-CALL assets.include("js/bootstrap.min.js")%]
+[%-CALL assets.include("js/bootstrap-switch.min.js")%]
+
+
+[%- assets.export("css") |none-%]
+<!--[if lt IE 9]>
+    <script src="/static/js/html5shiv.js"></script>
+    <script src="/static/js/respond.min.js"></script>
+<![endif]-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="[% body_class %] admin"><script>var actions=[];</script>
+	<header class="user">
+		<div class="header-content admin">
+			<div class="container">
+				<div class="row-fluid">
+					<div class="logo pull-left col-xs-3 col-sm-3"><div class="contents"><a href="[% c.uri_for_action("/$role_controller/dashboard/index")%]"><img src="/static/img/logo.png" border="0"></a> <b style="color: white;">admin</b></div></div>
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".menu-top">
+						<span class="sr-only">[%l('Alternar navegação')%]</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<div class="menu-top collapse pull-right col-xs-12 col-sm-9">
+						[%INCLUDE parts/menu.tt%]
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+    [%content|none%]
+<script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
+
+[% assets.export("js")|none %]
+
+</body>
+</html>
+[%ELSE%][%content|none%][%END%]

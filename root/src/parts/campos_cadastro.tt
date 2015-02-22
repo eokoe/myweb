@@ -1,0 +1,38 @@
+[% DISABLE_MESSAGES=!(body.fn == 'new') %]
+<input type="hidden" name="aref" value="[%c.req.params.aref%]"/>
+<div class="loc-words">
+
+[% span_loc('Digite seu nome completo.')|none %]
+[% span_loc('Nome completo')|none %]
+[% span_loc('Você precisa preencher o e-email.')|none %]
+[% span_loc('Telefone')|none %]
+[% span_loc('Razão Social')|none %]
+[% span_loc('Celular')|none %]
+[% span_loc('Precisamos do número do CPF ou CNPJ para emissão de nota fiscal.')|none %]
+[% span_loc('A senha precisa conter no mínimo 5 caracteres.')|none %]
+[% span_loc('Você precisa concordar com os Termos de uso para prosseguir com o cadastro.')|none %]
+[% span_loc('Confira as senhas!')|none %]
+[% span_loc('Não foi possivel carregar o endereço pelo cep informado.')|none %]
+</div>
+[%# pra bugar o last-pass, assim ele nao faz um autocomplete zuado! %]
+<input type="email" class="hidden" name="user_useremail"/>
+<input type="password" class="hidden" name="user_userpass"/>
+
+[%input_text('name','Nome completo', { required => 1, label_col => 'col-lg-12 label-name', input_col => 'col-lg-12', control_label => 'NO' })|none%]
+[%input_text('email','Informe seu endereço de e-mail', { email => 1, required => 1, app => '<span class="glyphicon glyphicon-envelope"></span>', label_col => 'col-lg-12', input_col => 'col-lg-12', control_label => 'NO' })|none%]
+[%input_text('mobile_number','Celular ou telefone', { required => 0, label_col => 'col-lg-12', input_col => 'col-lg-12', control_label => 'NO' })|none%]
+
+[%input_text('password', 'Escolha uma senha para usar neste site <small>(mínimo de 5 caracteres)</small>', { required => 1, type => 'password', app => '<span class="glyphicon glyphicon-lock"></span>', label_col => 'col-lg-12', input_col => 'col-lg-12', control_label => 'NO' })|none%]
+[%input_text('password_confirm', 'Por favor, confirme sua nova senha', { required => 1, type => 'password', app => '<span class="glyphicon glyphicon-lock"></span>', label_col => 'col-lg-12', input_col => 'col-lg-12', control_label => 'NO' })|none%]
+
+<div class="text-center check-terms">
+    <input type="checkbox" id="i_agree" name="i_agree"> [%l('Concordo com os')%] <a href="/termos" target="_blank" tabindex="-1"><strong>[%l('Termos de Uso')%]</strong></a>
+</div>
+
+<div class="form-group">
+    <div class="col-lg-8 col-lg-offset-2 ">
+        <button type="submit" id="bt-cadastro" data-loading-text="[%l('Processando...')%]" class="btn col-sm-12 btn-lg btn-warning">[%l('CRIAR CONTA')%]</button>
+        <br />
+    </div>
+</div>
+

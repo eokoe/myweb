@@ -1,0 +1,2 @@
+[%IF error_msg %]<div class="alert alert-danger"><p>[%error_msg%]</p></div>[%END%]
+[%IF status_msg %]<div class="alert alert-success"><p>[%status_msg%]</p></div>[%END%]

@@ -1,0 +1,22 @@
+[%SET title = l('Fale Conosco')%]
+	<div class="title-cadastro">
+		<div class="container">
+			<div class="row text-center">
+				[%l('Fale conosco')%]
+			</div>
+		</div>
+	</div>
+	<div class="main-container container text-center">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 box-shadow text-center">
+				<h3>[%l('Dúvidas, sugestões?')%]?<br />[%l('Utilize os canais abaixo para entrar em contato')%]:</h3>
+				<br />
+				<h4>E-mail</h4>
+				<h3><a href="mailto:suporte@webapp.com" class="btn btn-warning">suporte@app.com.br</a></h3>
+
+				<br /><br />
+				<h4>[%l('Telefone')%]</h4>
+				<h2>+55 (11) 1223-3456</h3>
+			</div>
+		</div>
+	</div>

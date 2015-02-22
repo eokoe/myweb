@@ -1,0 +1,28 @@
+<div class="main-container container">
+[%IF error_code == 403%]
+<div class="alert alert-danger">
+    <h1>Permissões insuficientes!</h1>
+</div>
+[%ELSE%]
+<h1>Erro interno</h1>
+<div class="alert alert-danger">
+    <p>Infelizmente, ocorreu um erro não previsto.</p>
+</div>
+<p>Pedimos desculpas, e que para você repita sua ação em alguns minutos, para verificar se o problema já foi solucionado.</p>
+
+[%END%]
+
+[%IF c.debug%]
+<h3>DEBUG ATIVO:</h3>
+<p>Informações sobre o erro:</p>
+<pre>[%error%]</pre>
+
+REST API [%error_url%]
+Content:
+<pre>
+[%error_content || '!empty!' %]
+</pre>
+
+[%END%]
+
+</div>

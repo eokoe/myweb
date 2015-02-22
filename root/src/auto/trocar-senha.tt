@@ -1,0 +1,29 @@
+	<div class="main-container container">
+		[%INCLUDE 'parts/messages.tt'%]
+		<div class="row">
+			<h1 class="text-center">[%l('Recuperação de conta')%] <br/><small>[%l('Inserir nova senha')%]</small></h1>
+			<br />
+			<div class="col-md-6 col-md-offset-3 box-shadow">
+				<form class="form-horizontal" autocomplete="off" method="post" action="/form/resetpass">
+
+					<div class="[%c.req.params.email ? 'hidden' : ''%]">
+					[%input_text('email','E-mail', { extratags => 'autocomplete="off"', value => c.req.params.email, email => 1, required => 1, app => '<span class="glyphicon glyphicon-envelope"></span>', label_col => 'col-lg-12', input_col => 'col-lg-12', control_label => 'NO' })|none%]
+					[%input_text('secret_key', 'Código', {extratags => 'autocomplete="off"',value => c.req.params.key, required => 1, app => '<span class="glyphicon glyphicon-lock"></span>', label_col => 'col-lg-12', input_col => 'col-lg-12', control_label => 'NO' })|none%]
+					</div>
+
+					[%input_text('password', 'Digite sua nova senha', { extratags => 'autocomplete="off"',required => 1, type => 'password', app => '<span class="glyphicon glyphicon-lock"></span>', label_col => 'col-lg-12', input_col => 'col-lg-12', control_label => 'NO' })|none%]
+					[%input_text('password_confirm', 'Confirmar nova senha', { extratags => 'autocomplete="off"',required => 1, type => 'password', app => '<span class="glyphicon glyphicon-lock"></span>', label_col => 'col-lg-12', input_col => 'col-lg-12', control_label => 'NO' })|none%]
+
+					<input type="hidden" name="fn" value="new"/>
+					<div class="form-group ">
+						<div class="col-lg-8 col-lg-offset-2 ">
+							<button type="submit" class="btn col-sm-12 btn-warning" data-loading-text="[%l('Processando...')%]">[%l('Confirmar mudança')%]</button>
+							<br />
+						</div>
+					</div>
+
+
+				</form>
+			</div>
+		</div>
+	</div>

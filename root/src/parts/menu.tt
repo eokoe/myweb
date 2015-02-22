@@ -1,0 +1,22 @@
+    <ul>
+        [%IF !c.user%]
+            <li class="[% IF "/${c_req_path}" == '/cadastro' %]active[%END%] odd"><a href="/cadastro" class="white shadow">[%l('Cadastre-se')%]</a></li>
+			<li class="split">|</li>
+            <li class="[% IF "/${c_req_path}" == '/contato' %]active[%END%] odd"><a href="/contato" class="white shadow">[%l('Contato')%]</a></li>
+			<li class="split">|</li>
+            <li class="[% IF "/${c_req_path}" == '/login' %]active[%END%] even"><a href="/login" class="white shadow"><i class="glyphicon glyphicon-log-in"></i> Login</a></li>
+        [%ELSIF role_controller == 'admin' %]
+            [%href = c.uri_for_action("/$role_controller/dashboard/index")%]
+            <li [% IF href == "${c_req_authority}/${c_req_path}" %]class="active"[%END%]><a href="[%href%]"><i class="glyphicon glyphicon-briefcase"></i> [%l('dashboard')%]</a></li>
+
+            <li class="split">|</li>
+
+            [%href = c.uri_for_action("/$role_controller/users/index")%]
+            <li [% IF href == "${c_req_authority}/${c_req_path}" %]class="active"[%END%]><a href="[%href%]"><i class="glyphicon glyphicon-user"></i> Users</a></li>
+
+        [%END%]
+    [%IF c.user%]
+		<li class="split">|</li>
+        <li><a href="/logout"><i class="glyphicon glyphicon-log-out"></i> [%l('Sair')%]</a></li>
+    [%END%]
+    </ul>

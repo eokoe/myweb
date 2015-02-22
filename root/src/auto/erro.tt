@@ -1,0 +1,10 @@
+<div class="title-cadastro">
+    <div class="container">
+        <div class="row text-center">
+            [%l('Ocorreu um erro desconhecido')%]
+        </div>
+    </div>
+</div>
+[%IF error_msg %]<div class="alert alert-danger"><p>[%error_msg%]</p></div>[%END%]
+[%IF status_msg %]<div class="alert alert-danger"><p>[%status_msg%]</p></div>[%END%]
+[% PROCESS 'auto/login.tt' %]

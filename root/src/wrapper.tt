@@ -1,0 +1,107 @@
+[%IF !without_wrapper%][%IF template_wrapper %][% INCLUDE "wrapper_${template_wrapper}.tt"|none%][%ELSE%]
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<link rel="icon"
+      type="image/png"
+      href="/static/img/logo.png" />
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>[% template.title or site.title %]</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+[%-CALL assets.include("css/bootstrap.min.css")%]
+
+[%-CALL assets.include("css/animate.min.css")%]
+[%-CALL assets.include("css/site.css")%]
+
+[%-CALL assets.include("js/lexicon.js")%]
+[%-CALL assets.include("js/bootstrap.min.js")%]
+[%-CALL assets.include("js/jquery.maskedinput.min.js")%]
+[%-CALL assets.include("js/modernizr.js")%]
+
+[%-CALL assets.include("js/site.js")%]
+
+[%- assets.export("css") |none-%]
+<!--[if lt IE 9]>
+    <script src="/static/js/html5shiv.js"></script>
+    <script src="/static/js/respond.min.js"></script>
+<![endif]-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<div class="loc-words">
+<!--Textos q vc vai usar no js.-->
+[% span_loc('Sim')|none %]
+[% span_loc('Não')|none %]
+</div>
+
+<body class="[% body_class %]">
+    <header class="home">
+        <div class="header-content">
+            <div class="container">
+                <div class="row-fluid">
+                    <div class="logo pull-left col-xs-10 col-sm-5 col-lg-5">
+                        <div class="contents">
+                        <a href="/"><img src="/static/img/logo.png" border="0"></a>
+                        </div>
+                    </div>
+
+                    <div class="cam hidden[%IF page_name == 'index'%]-xs[%END%] col-sm-2 col-lg-2 animated fadeInDown"></div>
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".menu-top">
+                        <span class="sr-only">[%l('Alternar navegação')%]</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <div class="menu-top collapse pull-right col-xs-12 col-sm-5 col-lg-5">
+                        [%INCLUDE parts/menu.tt%]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    [%content|none%]
+
+    <footer class="bs-footer" role="contentinfo">
+        <div class="menu-footer">
+            <div class="container text-center">
+                <h1>Slipknot com batata frita</h1>
+
+				<div class="row footer-cols">
+					<div class="col-sm-5 menu">
+						[%INCLUDE parts/menu_footer.tt%]
+					</div>
+					<div class="col-sm-4 contact-info">
+						<span class="header">[%l('Telefone')%]</span><br />
+						<h4 class="phone">+55 (11) 1234-4321</h4>
+						<br />
+						<span class="header">[%l('Onde estamos')%]</span><br />
+						<p class="address">No mundo, 123<br />
+						Terra - Calor - Brasil<br />
+						CEP 12345-211</span>
+					</div>
+
+				</div>
+            </div>
+        </div>
+        <div class="copyright container">
+            <div class="row">
+                <div class="col-sm-7 text-left">
+                    &copy; [%l('Todos os direitos reservados.')%]</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">var ga;</script>
+[% assets.export("js")|none %]
+[%INCLUDE 'ga.tt'%]
+
+</body>
+</html>
+[%END%][%ELSE%][%content|none%][%END%]

@@ -1,0 +1,32 @@
+[%SET title = l('Cadastre-se')%]
+
+	<div class="title-cadastro text-center">
+		<div class="container">
+			<div class="row">
+				[%l('Pronto para começar se cadastrar?')%]
+			</div>
+		</div>
+	</div>
+	<div class="main-container container">
+		<br />
+		[%INCLUDE 'parts/messages.tt'%]
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="box-shadow">
+					<form class="form-horizontal" id="form-cadastro" autocomplete="off" method="post" action="/form/newaccount">
+                        [%INCLUDE 'parts/campos_cadastro.tt'%]
+                        <input type="hidden" name="fn" value="new"/>
+					</form>
+					<div class="row responsive-padding">
+						<div class="menu-form-login col-md-6">
+								<a href="/login">[%l('Já é cadastrado? Faça o login!')%]</a>
+						</div>
+						<div class="menu-form-login col-md-6">
+								<a href="/esqueceu">[%l('Esqueceu sua senha?')%]</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>

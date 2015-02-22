@@ -1,0 +1,28 @@
+<div class="title-cadastro">
+    <div class="container">
+        <div class="row text-center">
+            [%l('Recuperação de senha')%]
+        </div>
+    </div>
+</div>
+
+	<div class="main-container container">
+		<div class="row">
+			[%INCLUDE 'parts/messages.tt'%]
+
+			<div class="text-center">
+				<div class="row responsive-padding">
+					<div class="menu-form-login col-md-3 col-md-offset-3 text-center">
+							<a href="/login" class="btn btn-info">[%l('Fazer login')%]</a>
+					</div>
+					<div class="menu-form-login col-md-3 text-center">
+							<a href="/" class="btn btn-info">[%l('Voltar para home')%]</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<br />
+
+	</div>
+
