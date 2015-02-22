@@ -11,11 +11,11 @@ Catalyst::ScriptRunner->run( 'MyWeb', 'Server' );
 
 =head1 NAME
 
-webetamu_server.pl - Catalyst Test Server
+webmyweb_server.pl - Catalyst Test Server
 
 =head1 SYNOPSIS
 
-webetamu_server.pl [options]
+webmyweb_server.pl [options]
 
    -d --debug           force debug mode
    -f --fork            handle each request in a new process

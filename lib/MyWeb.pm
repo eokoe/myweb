@@ -42,7 +42,7 @@ our $VERSION = '0.01';
 
 # Configure the application.
 #
-# Note that settings in webetamu.conf (or other external
+# Note that settings in webmyweb.conf (or other external
 # configuration file that you set up manually) take precedence
 # over this when using ConfigLoader. Thus configuration
 # details given here can function as a default configuration,
@@ -125,7 +125,7 @@ MyWeb - Catalyst based application
 
 =head1 SYNOPSIS
 
-    script/webetamu_server.pl
+    script/webmyweb_server.pl
 
 =head1 DESCRIPTION
 
