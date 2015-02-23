@@ -14,7 +14,11 @@ sub login : Chained('base') : PathPart('') : Args(0) {
     my $api  = $c->model('API');
     my $form = $c->model('Form');
 
-    my $hm = { %{ $c->req->params }, role => 'user' };
+    my $hm = {
+        %{ $c->req->params },
+        role => 'user',
+        get_session => 1
+    };
 
     $form->only_number( $hm, 'mobile_number' );
 
@@ -33,7 +37,10 @@ sub login : Chained('base') : PathPart('') : Args(0) {
     }
     else {
 
-        $c->detach('/form/login/login');
+        my $user = $c->find_user( $res->{session} );
+        $c->set_authenticated($user);
+
+        $c->detach('/form/login/after_login');
     }
 }
 

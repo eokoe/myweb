@@ -38,7 +38,7 @@ sub authenticate {
     }
 
     $c->user_session->{user} = $res;
-
+use DDP; p $res;
     $auth_info = $res;
 
     my $user_obj = $realm->find_user( $auth_info, $c );

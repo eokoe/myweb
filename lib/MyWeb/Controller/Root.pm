@@ -49,6 +49,7 @@ sub index : Path : Args(0) {
 
 }
 
+
 sub root_for_ajax : Chained('/') : PathPart('') : CaptureArgs(0) {
 
 }

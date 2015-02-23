@@ -15,13 +15,16 @@ $(function(){
             msg = "Digite seu nome completo.".loc();
         }else if (!$("#elm_email").val()){
             msg = "Você precisa preencher o e-email.".loc();
-        }else if ($("#elm_password").val().length < 5){
+        /*}else if ($("#elm_password").val().length < 5){
             msg = "A senha precisa conter no mínimo 5 caracteres.".loc();
+            */
         }else if (!$("#i_agree").prop("checked")){
             msg = "Você precisa concordar com os Termos de uso para prosseguir com o cadastro.".loc();
-        }else if (! ($("#elm_password").val() == $("#elm_password_confirm").val())){
+        }
+        /*else if (! ($("#elm_password").val() == $("#elm_password_confirm").val())){
             msg = "Confira as senhas!".loc();
         }
+        */
 
         if (msg != ""){
             e.preventDefault();
